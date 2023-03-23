@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="with=device-width, initial scale=1.0">
+    <title>Univeristy of Science and Technology of Southern Philippines</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <body>
+            <section class="header">
+                <nav>
+                    <a href="index.html"><img src="images/logo.png"></a>
+                    <div class="nav-links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="">ABOUT</a></li>
+                            <li><a href="">COURSE</a></li>
+                            <li><a href="">BLOG</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                </nav>   
+
+<!---------------form--------------->
+<div class="container">
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <h3>Get In Touch</h3>
+        <input type="text" id="name" placeholder="Your Name" required> 
+        <input type="email" id="email" placeholder="Your Email ID" required> 
+        <input type="number" id="phone" placeholder="Your Phone Number" required> 
+        <textarea id="message" rows="4" placeholder="How can we help you"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+<div class="gap"></div>
+<!---------javascript for contact us page------->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+        SecureToken : "83436a74-e17c-472c-8dae-a2525cbbfb85",
+        To : 'bunarodericka@gmail.com',
+        From : 'bunarodericka@gmail.com',
+        Subject : "New Contact Form Inquiry",
+        Body : "Name: " + document.getElementById("name").value
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> Phone no: " + document.getElementById("phone").value
+            + "<br> Message: " + document.getElementById("message").value
+        }).then(
+        message => alert("Message Sent Succesfully")
+    );
+}
+</script>  
+</section>
+
+<!--------------footer-------------->
+
+<section class="footer">
+    <h4>About Us</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took <br>a galley of type and scrambled it to make a type specimen book.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by Easy Tutorials</p>
+    
+
+</section>
+
+<!----------javaSrcipt for Toggle Menu------------>            
+             <script>
+                var navLinks = document.getElementById("navLinks");
+                function showMenu(){
+                    navLinks.style.right = "0";
+                }
+                function hideMenu(){
+                    navLinks.style.right = "200px";
+                }
+
+             </script>
+
+        </body>
+
+    </head>
+</html>
